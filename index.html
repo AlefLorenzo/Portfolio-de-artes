@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Arte - Escola de Chicago</title>
+    <!-- Link CDN do Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white p-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="text-xl font-bold">Portfólio</div>
+        <div class="md:hidden menu-button cursor-pointer text-2xl">
+            ☰
+        </div>
+        <ul id="navbar-links" class="fixed top-0 right-0 h-full w-64 bg-gray-900 text-white flex flex-col items-start pt-10 pl-6 transform translate-x-full transition-transform duration-300 md:flex md:flex-row md:static md:w-auto md:space-x-6 md:translate-x-0">
+            <li><a href="#portfolio" class="hover:text-red-400 py-2">Artes</a></li>
+            <li><a href="#questions" class="hover:text-red-400 py-2">Questões</a></li>
+            <li><a href="#contact" class="hover:text-red-400 py-2">Contato</a></li>
+            <li><a href="#about" class="hover:text-red-400 py-2">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção Artes -->
+    <section id="portfolio" class="p-6">
+        <h2 class="text-2xl font-bold mb-4">Artes</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card Arte 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <a href="https://www.artic.edu/artworks/12032/kasuga-deer-mandala" class="block">
+                    <img src="https://www.artic.edu/iiif/2/97d81945-a05e-2a05-a78d-73678bbd2d55/full/1686,/0/default.jpg" alt="Arte 1" class="w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                </a>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg"> Kasuga Deer Mandala</h3>
+                    <p class="text-sm text-gray-600">é uma obra de arte japonesa associada ao Santuário Kasuga Taisha em Nara...</p>
+                    <button onclick="openModal(1)" class="mt-2 inline-block text-blue-500 hover:text-blue-700">Saiba Mais</button>
+                </div>
+            </div>
+
+            <!-- Card Arte 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <a href="https://www.artic.edu/artworks/24548/shiva-as-lord-of-the-dance-nataraja" class="block">
+                    <img src="https://www.artic.edu/iiif/2/cf50f037-5fb2-e197-0e56-3ae701edb3e2/full/843,/0/default.jpg" alt="Arte 2" class="w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                </a>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">Shiva como Senhor da Dança (Nataraja)</h3>
+                    <p class="text-sm text-gray-600">Nataraja, que significa "Senhor da Dança" em sânscrito, é uma forma simbólica de Shiva que o retrata dançando dentro de um círculo de fogo...</p>
+                    <button onclick="openModal(2)" class="mt-2 inline-block text-blue-500 hover:text-blue-700">Saiba Mais</button>
+                </div>
+            </div>
+
+            <!-- Card Arte 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <a href="https://www.artic.edu/exhibitions/10418/french-neoclassical-paintings-from-the-horvitz-collection" class="block">
+                    <img src="https://artic-web.imgix.net/9614b880-3bf7-4b75-ad36-158bfc4be237/T-LEDRU2-Press300ppi%2C3000px%2CsRGB%2CJPEG.jpg?rect=0%2C0%2C3000%2C2266&auto=format%2Ccompress&q=80&fit=crop&crop=faces%2Ccenter&w=1500&h=1133" alt="Arte 3" class="w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                </a>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">Indigence and Honor (1804)</h3>
+                    <p class="text-sm text-gray-600">Hilaire Ledru foi um artista francês, associado ao movimento do Neoclassicismo...</p>
+                    <button onclick="openModal(3)" class="mt-2 inline-block text-blue-500 hover:text-blue-700">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden justify-center items-center z-50">
+        <div class="bg-white rounded-lg w-11/12 md:w-1/2 p-6">
+            <button onclick="closeModal()" class="text-black font-bold text-xl absolute top-4 right-4">X</button>
+            <h2 id="modal-title" class="text-2xl font-bold mb-4"></h2>
+            <p id="modal-description" class="text-sm text-gray-600"></p>
+        </div>
+    </div>
+
+    <!-- Seção Questões -->
+    <section id="questions" class="p-6 bg-gray-50">
+        <h2 class="text-2xl font-bold mb-4">Questões</h2>
+        <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold">Escolha um ou mais museus da lista para visitar.depois,compartilhe como foi a visita e 
+                    oque você viu. Vocês podem começar a discussão pelas perguntas a seguir :</h3>
+                <p class="text-sm text-gray-600 mt-2">  	Recursos do Tour Virtual:
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h3 class="font-semibold">1.que recursos o tour virtual oferece? É possível ver as obras do acervo “de perto “, em 
+                            alta resolução? E ”circula “ pelo interior do museu, em uma visita imersiva com 
+                            visualização 360 graus do espaço? </h3>
+                        <p class="text-sm text-gray-600 mt-2">
+                        </p>
+                    •	O tour virtual do Museu de Arte de Chicago oferece visualização em alta resolução das obras, permitindo uma experiência de “aproximação” das pinturas e esculturas. É possível explorar as salas do museu com visualização de 360 graus, o que dá uma sensação imersiva, como se você estivesse fisicamente presente.
+                </p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold">2.	 Os recursos de navegação são fáceis e intuitivo ?como você navegou nos site que 
+                    não são traduzidos para a língua inglesa? 
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2">O site do Instituto de Artes de Chicago tem uma navegação intuitiva e fácil, 
+                    com menus claros e uma barra de pesquisa visível, permitindo que os usuários acessem rapidamente
+                    as principais seções. No entanto, quando se trata de conteúdos em idiomas diferentes do inglês, 
+                    a navegação pode ser mais difícil, pois as traduções não são sempre disponíveis e o idioma precisa 
+                    ser selecionado manualmente. Isso pode representar um desafio para quem não fala inglês, 
+                    exigindo o uso de tradutores automáticos para entender o conteúdo.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold">3.  Que tipos de obras você viu ? De quais artistas? Como você chegou até elas? Você 
+                    precisou fazer uma busca ? Usou palavras chaves específicas? </h3>
+                <p class="text-sm text-gray-600 mt-2"> <span class="text-bold text-2x1 font-bold">Artistas:</span>
+
+                    <span class="text-bold text-2x1 font-bold">Shiva:</span> A obra de Shiva pode ser de artistas anônimos, já que muitos desses trabalhos, especialmente esculturas e pinturas religiosas, são produzidos dentro de tradições culturais, como a arte hindu. Um exemplo é a famosa escultura Nataraja, mas o autor pode não ser identificado. <br>
+                    <span class="text-bold text-2x1 font-bold">Kasuga Deer Mandala:</span> Esta obra provavelmente é de artistas japoneses tradicionais, associados ao culto de Kasuga Taisha, um importante santuário xintoísta. O autor exato pode ser desconhecido, dado que muitos mandalas eram produzidos coletivamente.<br>
+                    <span class="text-bold text-2x1 font-bold">Indigence and Honor (1804):</span> Se a obra é do período neoclássico ou romântico, pode ser atribuída a artistas como Francisco de Goya ou Eugène Delacroix, dependendo do estilo e do tema representado. <br>
+                    <br>
+                    <span class="text-bold text-2x1 font-bold">Como você chegou até elas?</span>
+                    
+                    Acessando o site do Instituto de Artes de Chicago, você provavelmente usou a barra de pesquisa para localizar as obras específicas. Elas podem estar listadas em coleções permanentes ou exposições do museu.
+                    <br>
+                    <span class="text-bold text-2x1 font-bold">Foi necessário fazer uma busca?</span>
+                    <br>
+                    Sim, foi necessário buscar as obras, pois elas podem não ser exibidas diretamente na página inicial. A busca ajuda a encontrar itens específicos nas coleções do museu.
+                    Palavras-chave específicas:
+                    
+                    Para encontrar as obras, você provavelmente usou palavras-chave como "Shiva", "Kasuga Deer Mandala" e "Indigence and Honor 1804". Essas palavras ajudam a filtrar os resultados de busca e localizar as obras desejadas no site.
+                </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+            <h3 class="font-semibold">4. Oque você mais gostou durante esse tour virtual ? Você visitaria um museu 
+                virtualmente, se possível ? </h3>
+            <p class="text-sm text-gray-600 mt-2">
+                O que mais me agradou durante um tour virtual foi a possibilidade de explorar uma grande diversidade de 
+                obras de arte, de diferentes épocas e culturas, de forma interativa e detalhada. 
+                Visitar um museu virtualmente, se possível, é algo que eu faria, pois oferece uma experiência 
+                enriquecedora e acessível, permitindo explorar coleções de forma mais profunda e com mais calma. 
+                Embora não substitua uma visita física, 
+                é uma excelente alternativa para aprender e apreciar a arte de maneira prática e conveniente.
+            </p>
+    </div>
+            
+    </section>
+
+    
+    
+    <div class="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">ARTE E O MEIO AMBIENTE</h2>
+        <h4 class="text-2xl text-gray-800 mb-4"> TEMA 5: <br>ARTE E O MEIO AMBIENTE <br>PAG:51</h4>
+        <div class="bg-gray-100 p-4 rounded-lg">
+            <button onclick="toggleDetails()" class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 focus:outline-none mb-4">Ver mais detalhes</button>
+            <div id="details" class="hidden">
+                <div class="border-l-4 border-indigo-500 pl-4 mb-4">
+                    <p class="text-gray-600 italic">
+                        "A Land Art não apenas amplia a definição tradicional de arte, mas também reitera a 
+                        importância de uma relação mais profunda e respeitosa com o meio ambiente.
+                        Ao interagir diretamente com a natureza e ao usar a paisagem como sua tela, 
+                        essa forma de arte destaca a beleza efêmera do mundo natural 
+                        e convida o público a refletir sobre o impacto humano no planeta."
+                    </p>
+                </div>
+                <div class="p-4 rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-gray-700">Comentário sobre o trecho</h3>
+                <p class="text-gray-600 mt-2">
+                    <span class="text-2xl font-bold text-gray-800 " >  A arte e o meio ambiente estão cada vez mais interconectadas </span>, com a arte se tornando uma poderosa ferramenta para 
+                    conscientizar e inspirar ações em relação à preservação do planeta. Através de diversas formas de expressão, 
+                    os artistas abordam questões ambientais como a poluição, o aquecimento global, o desmatamento e a perda de 
+                    biodiversidade, buscando provocar reflexão e mudança. Nesse contexto, a Land Art se destaca como um movimento que
+                    integra arte e natureza de maneira direta e profunda. Ao criar obras que interagem com o ambiente natural, 
+                    usando materiais encontrados no próprio local, a Land Art propõe uma reflexão sobre nossa relação com a terra e 
+                    sobre os impactos das ações humanas no ecossistema. <br>
+                    
+                    <span class="text-2xl font-bold text-gray-800 ">A  efemeridade das obras de Land Art</span>, que muitas vezes são moldadas pelas forças naturais e
+                    estão em constante transformação, simboliza a transitoriedade da natureza e a 
+                    necessidade urgente de preservá-la. Assim, tanto a arte em geral quanto a Land Art têm um papel 
+                    fundamental em alertar o público sobre a fragilidade do meio ambiente, convidando-nos a repensar 
+                    nossos hábitos e a adotar uma postura mais responsável e sustentável. Ambas as formas de arte, 
+                    ao interagir com a natureza, não apenas a celebram, mas também nos desafiam a preservar o planeta 
+                    para as futuras gerações.
+                </p>
+            </div>
+            <div class="p-4 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-700">Explicação adicional</h3>
+                <p class="text-gray-600 mt-2">
+                    A arte e o meio ambiente se entrelaçam como uma forma de refletir sobre os impactos da ação humana no planeta. 
+                    Nos últimos anos, artistas têm abordado temas como a poluição, as mudanças climáticas e a degradação 
+                    dos ecossistemas, usando suas obras para conscientizar o público sobre a urgência da preservação 
+                    ambiental. A arte, nesse contexto, vai além da estética, funcionando como uma poderosa ferramenta de 
+                    ativismo que provoca uma reflexão crítica sobre nosso papel no mundo natural. Além disso, ela reforça 
+                    a ideia de que a natureza não é apenas um recurso a ser explorado, 
+                    mas um patrimônio que deve ser respeitado e protegido.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDetails() {
+            const details = document.getElementById('details');
+            details.classList.toggle('hidden');
+        }
+    </script>
+        </div>
+        
+        
+        <!-- Seção Contato -->
+        <section id="contact" class="p-6">
+            <h2 class="text-2xl font-bold mb-4">Contato</h2>
+            <p class="text-gray-600">Para mais informações, entre em contato pelo email:</p>
+            <p class="text-blue-500 font-semibold">aleflorenzo4@gmail.com</p>
+        </section>
+    
+        <!-- Seção Sobre -->
+        <section id="about" class="p-6 bg-gray-50">
+            <h2 class="text-2xl font-bold mb-4">Sobre</h2>
+            <p class="text-gray-600">Este portfólio apresenta uma coleção de obras inspiradas na Escola de Chicago, que revolucionou a arquitetura e o design no final do século XIX. Aqui estão exemplares que mostram a inovação e o impacto desse movimento.</p>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white text-center p-4">
+            <p>Portfólio de Arte inspirado na Escola de Chicago &copy; 2024</p>
+        </footer>
+        
+        <!-- Script -->
+        <script src="js/script.js"></script>
+</body>
+</html>
